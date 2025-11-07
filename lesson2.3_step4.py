@@ -17,9 +17,6 @@ chrome.find_element(By.ID, 'answer').send_keys(calc(x))
 chrome.find_element(By.CSS_SELECTOR, '.btn').click()
 print(chrome.switch_to.alert.text)
 
-finally:
-    time.sleep(10)
-    chrome.quit()
 
 
 
