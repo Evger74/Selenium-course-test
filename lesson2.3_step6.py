@@ -8,18 +8,10 @@ def calc(x:str) -> str:
 
 
 chrome = webdriver.Chrome()
-chrome.get('http://suninjuly.github.io/alert_accept.html')
+chrome.get('http://suninjuly.github.io/redirect_accept.html')
 chrome.find_element(By.CSS_SELECTOR, '.btn').click()
-confirm = chrome.switch_to.alert
-confirm.accept()
+chrome.switch_to.window(chrome.window_handles[1])
 x = chrome.find_element(By.ID, 'input_value').text
 chrome.find_element(By.ID, 'answer').send_keys(calc(x))
 chrome.find_element(By.CSS_SELECTOR, '.btn').click()
 print(chrome.switch_to.alert.text)
-
-
-
-
-
-
-
